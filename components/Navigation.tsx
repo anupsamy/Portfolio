@@ -64,7 +64,7 @@ export default function Navigation() {
               </a>
               <a
                 href="mailto:vaiycee.art@gmail.com"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
@@ -143,7 +143,7 @@ export default function Navigation() {
                 </a>
                 <a
                   href="mailto:vaiycee.art@gmail.com"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                   aria-label="Email"
                 >
                   <Mail className="w-5 h-5" />
