@@ -12,7 +12,7 @@ const lato = Lato({
 })
 
 export const metadata: Metadata = {
-  title: 'Sikabahn - Art Portfolio',
+  title: 'Sikabahn',
   description: 'Art portfolio of Sikabahn',
 }
 

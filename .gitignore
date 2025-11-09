@@ -36,3 +36,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# artwork images - keep private, not in GitHub
+/public/images/
+public/images/
+
