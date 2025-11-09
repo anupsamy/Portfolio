@@ -31,6 +31,7 @@ export default function AboutPage() {
                 alt="Sikabahn"
                 fill
                 className="object-contain pointer-events-none"
+                unoptimized
                 draggable={false}
               />
             </div>
@@ -42,18 +43,15 @@ export default function AboutPage() {
             
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p className="text-lg leading-relaxed">
-                Welcome to my art portfolio. I'm Sikabahn, and I create art that explores the intersection of 
-                imagination and reality.
+                Hello, nice to meet you. I'm Sika!
               </p>
               
               <p className="text-lg leading-relaxed">
-                My work is inspired by the world around me, blending traditional techniques with modern 
-                perspectives to create pieces that tell stories and evoke emotions.
+                Making art, for me, is like playing with magic. With canvas and paint, I want to capture a world I can fall into — one in which light engraves time. For the sake of food and shelter though, I'm an engineering student. 
               </p>
               
               <p className="text-lg leading-relaxed">
-                Through my art, I aim to capture moments of beauty, wonder, and introspection, inviting 
-                viewers to see the world through a different lens.
+                Thank you for visiting my site, I hope you enjoy your stay.
               </p>
             </div>
 
@@ -79,6 +77,8 @@ export default function AboutPage() {
               </a>
               <a
                 href="mailto:vaiycee.art@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                 aria-label="Email"
               >

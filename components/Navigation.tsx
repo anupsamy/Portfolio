@@ -11,7 +11,6 @@ const menuItems = [
   { name: 'About', href: '/about' },
   { name: 'Commission', href: '/commission' },
   { name: 'FAQ', href: '/faq' },
-  { name: 'Guestbook', href: '/guestbook' },
 ]
 
 export default function Navigation() {
@@ -64,6 +63,8 @@ export default function Navigation() {
               </a>
               <a
                 href="mailto:vaiycee.art@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                 aria-label="Email"
               >
@@ -143,6 +144,8 @@ export default function Navigation() {
                 </a>
                 <a
                   href="mailto:vaiycee.art@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                   aria-label="Email"
                 >
