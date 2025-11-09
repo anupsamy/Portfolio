@@ -1,7 +1,3 @@
-// Artwork data structure
-// Add new artworks at the top of the array - they will appear first in the portfolio
-// Title is automatically generated from the image filename
-
 export interface ArtworkInput {
   id: string
   image: string
@@ -12,7 +8,7 @@ export interface ArtworkInput {
 
 export interface Artwork {
   id: string
-  title: string // Auto-generated from first 4 letters of filename
+  title: string // first 4 letters of filename
   image: string
   width: number
   height: number
@@ -39,7 +35,6 @@ function processArtworks(inputs: ArtworkInput[]): Artwork[] {
 }
 
 // Raw artwork data - add id, image, width, height, and optional description
-// Title (first 4 letters of filename) is auto-generated!
 export const artworkInputs: ArtworkInput[] = [
   {
     id: 'artwork-1',
@@ -120,16 +115,11 @@ export const artworkInputs: ArtworkInput[] = [
   },
   {
     id: 'artwork-12',
-    image: '/images/2023.01.22.png',
+    image: '/images/2023.01.22-c.png',
     width: 1200,
     height: 1600,
     description: 'Optional description of the artwork',
   },
-  
-  // To add more images:
-  // 1. Place image file in public/images/ folder
-  // 2. Add entry here with: { id: 'unique-id', image: '/images/your-filename.jpg', width: 1200, height: 1600 }
-  // 3. Title (first 4 letters) will be auto-generated!
 ]
 
 // Processed artworks with auto-generated title and dimensions

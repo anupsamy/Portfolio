@@ -28,25 +28,6 @@ export default function PortfolioClient({ artworks }: PortfolioClientProps) {
 
   return (
     <div className="pt-16 min-h-screen">
-      {/* Banner Section */}
-      <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden bg-gradient-to-b from-gray-50 to-white">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center z-10 px-4"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-4">Sikabahn</h1>
-            <p className="text-xl md:text-2xl text-gray-600">Art Portfolio</p>
-          </motion.div>
-        </div>
-        {/* Placeholder for banner images - you can add images here later */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="w-full h-full bg-gradient-to-r from-purple-200 via-pink-200 to-blue-200"></div>
-        </div>
-      </section>
-
       {/* Portfolio Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {artworks.length === 0 ? (
