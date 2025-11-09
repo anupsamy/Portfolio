@@ -4,18 +4,25 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Instagram, Twitter, Mail } from 'lucide-react'
+import { Instagram, Twitter, Mail, ChevronDown } from 'lucide-react'
 
 const menuItems = [
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'About', href: '/about' },
-  { name: 'Commission', href: '/commission' },
   { name: 'FAQ', href: '/faq' },
+]
+
+const commissionItems = [
+  { name: 'Commission', href: '/commission' },
+  { name: 'Terms of Service', href: '/commission/terms' },
 ]
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isCommissionOpen, setIsCommissionOpen] = useState(false)
   const pathname = usePathname()
+  
+  const isCommissionPage = pathname?.startsWith('/commission')
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
@@ -40,6 +47,53 @@ export default function Navigation() {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Commission Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsCommissionOpen(true)}
+              onMouseLeave={() => setIsCommissionOpen(false)}
+            >
+              <div className="flex items-center space-x-1">
+                <Link
+                  href="/commission"
+                  className={`text-sm font-medium transition-colors ${
+                    isCommissionPage
+                      ? 'text-gray-900 border-b-2 border-gray-900'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  Commission
+                </Link>
+                <ChevronDown className={`w-4 h-4 transition-transform text-gray-600 ${isCommissionOpen ? 'rotate-180' : ''}`} />
+              </div>
+              
+              <AnimatePresence>
+                {isCommissionOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                  >
+                    {commissionItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={`block px-4 py-2 text-sm transition-colors ${
+                          pathname === item.href
+                            ? 'text-gray-900 bg-gray-50 font-semibold'
+                            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
             
             {/* Social Links */}
             <div className="flex items-center space-x-3 ml-2 pl-4 border-l border-gray-200">
@@ -121,6 +175,25 @@ export default function Navigation() {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* Commission Section - Mobile */}
+              <div className="space-y-2">
+                <div className="text-base font-medium text-gray-900">Commission</div>
+                {commissionItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`block pl-4 text-sm transition-colors ${
+                      pathname === item.href
+                        ? 'text-gray-900 font-semibold'
+                        : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
               
               {/* Social Links - Mobile */}
               <div className="flex items-center space-x-4 pt-4 border-t border-gray-200">

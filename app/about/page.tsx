@@ -39,7 +39,7 @@ export default function AboutPage() {
 
           {/* Text Section - Right Side */}
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">About</h1>
+            <h1 className="text-4xl md:text-4xl font-bold text-gray-900">About</h1>
             
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p className="text-lg leading-relaxed">
@@ -47,7 +47,7 @@ export default function AboutPage() {
               </p>
               
               <p className="text-lg leading-relaxed">
-                Making art, for me, is like playing with magic. I'm filling out my spellbook with all kinds of magic I can think of, until I can bring about worlds where light engraves time. For the sake of food and shelter, though, I'm an engineering student. 
+                 I make art to give my existence meaning. For the sake of food and shelter, though, I'm an engineering student.
               </p>
               
               <p className="text-lg leading-relaxed">
