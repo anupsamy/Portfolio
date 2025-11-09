@@ -7,6 +7,17 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 
 import type { Artwork } from '@/data/artworks'
 
+// Prevent right-click and drag
+const preventContextMenu = (e: React.MouseEvent) => {
+  e.preventDefault()
+  return false
+}
+
+const preventDrag = (e: React.DragEvent) => {
+  e.preventDefault()
+  return false
+}
+
 interface ArtworkModalProps {
   artworks: Artwork[]
   currentIndex: number
@@ -100,15 +111,22 @@ export default function ArtworkModal({ artworks, currentIndex, onClose, onNaviga
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ duration: 0.2 }}
           onClick={(e) => e.stopPropagation()}
-          className="relative max-w-[95vw] max-h-[95vh]"
+          className="relative max-w-[95vw] max-h-[95vh] select-none"
         >
-          <Image
-            src={artwork.image}
-            alt={artwork.title}
-            width={artwork.width}
-            height={artwork.height}
-            className="max-w-full max-h-[95vh] w-auto h-auto object-contain"
-          />
+          <div
+            onContextMenu={preventContextMenu}
+            onDragStart={preventDrag}
+            className="w-full h-full"
+          >
+            <Image
+              src={artwork.image}
+              alt={artwork.title}
+              width={artwork.width}
+              height={artwork.height}
+              className="max-w-full max-h-[95vh] w-auto h-auto object-contain pointer-events-none"
+              draggable={false}
+            />
+          </div>
         </motion.div>
       </motion.div>
     </AnimatePresence>

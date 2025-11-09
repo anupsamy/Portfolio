@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Lato } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation'
+import ImageProtection from '@/components/ImageProtection'
 
 const lato = Lato({
   weight: ['300', '400', '700'],
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={lato.variable}>
       <body className="font-sans antialiased" suppressHydrationWarning>
+        <ImageProtection />
         <Navigation />
         {children}
       </body>

@@ -6,6 +6,17 @@ import { motion } from 'framer-motion'
 import type { Artwork } from '@/data/artworks'
 import ArtworkModal from '@/components/ArtworkModal'
 
+// Prevent right-click and drag
+const preventContextMenu = (e: React.MouseEvent) => {
+  e.preventDefault()
+  return false
+}
+
+const preventDrag = (e: React.DragEvent) => {
+  e.preventDefault()
+  return false
+}
+
 interface PortfolioClientProps {
   artworks: Artwork[]
 }
@@ -48,16 +59,21 @@ export default function PortfolioClient({ artworks }: PortfolioClientProps) {
                 className="break-inside-avoid mb-2 cursor-pointer group"
                 onClick={() => handleArtworkClick(artwork)}
               >
-                <div className="relative overflow-hidden bg-gray-100">
+                <div 
+                  className="relative overflow-hidden bg-gray-100 select-none"
+                  onContextMenu={preventContextMenu}
+                  onDragStart={preventDrag}
+                >
                   <div className="aspect-w-1 aspect-h-1 w-full">
                     <Image
                       src={artwork.image}
                       alt={artwork.title}
                       width={artwork.width}
                       height={artwork.height}
-                      className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105 pointer-events-none"
                       placeholder="blur"
                       blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                      draggable={false}
                     />
                   </div>
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
