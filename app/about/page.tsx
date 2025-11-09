@@ -47,7 +47,7 @@ export default function AboutPage() {
               </p>
               
               <p className="text-lg leading-relaxed">
-                Making art, for me, is like playing with magic. With canvas and paint, I want to capture a world I can fall into — one in which light engraves time. For the sake of food and shelter though, I'm an engineering student. 
+                Making art, for me, is like playing with magic. I'm filling out my spellbook with all kinds of magic I can think of, until I can bring about worlds where light engraves time. For the sake of food and shelter, though, I'm an engineering student. 
               </p>
               
               <p className="text-lg leading-relaxed">
