@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Instagram, Twitter, Mail } from 'lucide-react'
 
 const menuItems = [
   { name: 'Portfolio', href: '/portfolio' },
@@ -26,7 +27,7 @@ export default function Navigation() {
           </Link>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {menuItems.map((item) => (
               <Link
                 key={item.href}
@@ -40,6 +41,35 @@ export default function Navigation() {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Social Links */}
+            <div className="flex items-center space-x-3 ml-2 pl-4 border-l border-gray-200">
+              <a
+                href="https://instagram.com/sikabahn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-purple-600 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://twitter.com/sikabahn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-blue-500 transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a
+                href="mailto:vaiycee.art@gmail.com"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+                aria-label="Email"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Mobile Burger Button */}
@@ -90,6 +120,35 @@ export default function Navigation() {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* Social Links - Mobile */}
+              <div className="flex items-center space-x-4 pt-4 border-t border-gray-200">
+                <a
+                  href="https://instagram.com/sikabahn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-purple-600 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://twitter.com/sikabahn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-blue-500 transition-colors"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="w-5 h-5" />
+                </a>
+                <a
+                  href="mailto:vaiycee.art@gmail.com"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  aria-label="Email"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
