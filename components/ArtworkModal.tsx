@@ -59,57 +59,53 @@ export default function ArtworkModal({ artworks, currentIndex, onClose, onNaviga
   }, [currentIndex, hasPrevious, hasNext, onNavigate, onClose])
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={currentIndex}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+      onClick={onClose}
+    >
+      <button
         onClick={onClose}
+        className="absolute top-4 right-4 z-10 p-2 text-white/80 hover:text-white transition-colors"
+        aria-label="Close"
       >
+        <X className="w-6 h-6" />
+      </button>
+
+      {/* Previous Arrow */}
+      {hasPrevious && (
         <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 text-white/80 hover:text-white transition-colors"
-          aria-label="Close"
+          onClick={(e) => {
+            e.stopPropagation()
+            handlePrevious()
+          }}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 text-white/80 hover:text-white transition-colors bg-black/20 hover:bg-black/40 rounded-full"
+          aria-label="Previous artwork"
         >
-          <X className="w-6 h-6" />
+          <ChevronLeft className="w-8 h-8" />
         </button>
+      )}
 
-        {/* Previous Arrow */}
-        {hasPrevious && (
-          <button
-            onClick={(e) => {
-              e.stopPropagation()
-              handlePrevious()
-            }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 text-white/80 hover:text-white transition-colors bg-black/20 hover:bg-black/40 rounded-full"
-            aria-label="Previous artwork"
-          >
-            <ChevronLeft className="w-8 h-8" />
-          </button>
-        )}
-
-        {/* Next Arrow */}
-        {hasNext && (
-          <button
-            onClick={(e) => {
-              e.stopPropagation()
-              handleNext()
-            }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 text-white/80 hover:text-white transition-colors bg-black/20 hover:bg-black/40 rounded-full"
-            aria-label="Next artwork"
-          >
-            <ChevronRight className="w-8 h-8" />
-          </button>
-        )}
-        
+      {/* Next Arrow */}
+      {hasNext && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation()
+            handleNext()
+          }}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 text-white/80 hover:text-white transition-colors bg-black/20 hover:bg-black/40 rounded-full"
+          aria-label="Next artwork"
+        >
+          <ChevronRight className="w-8 h-8" />
+        </button>
+      )}
+      
+      <AnimatePresence mode="wait">
         <motion.div
           key={artwork.id}
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.9, opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.1, ease: 'easeInOut' }}
           onClick={(e) => e.stopPropagation()}
           className="relative max-w-[95vw] max-h-[95vh] select-none"
         >
@@ -128,8 +124,8 @@ export default function ArtworkModal({ artworks, currentIndex, onClose, onNaviga
             />
           </div>
         </motion.div>
-      </motion.div>
-    </AnimatePresence>
+      </AnimatePresence>
+    </div>
   )
 }
 
