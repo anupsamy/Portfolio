@@ -1,6 +1,7 @@
-import { redirect } from 'next/navigation'
+import { artworks } from '@/data/artworks'
+import PortfolioClient from './portfolio/PortfolioClient'
 
 export default function Home() {
-  redirect('/portfolio')
+  return <PortfolioClient artworks={artworks} />
 }
 
