@@ -9,7 +9,7 @@ import { Instagram, Twitter, Mail, ChevronDown } from 'lucide-react'
 const menuItems = [
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'About', href: '/about' },
-  { name: 'FAQ', href: '/faq' },
+  // { name: 'FAQ', href: '/faq' },
 ]
 
 const commissionItems = [
