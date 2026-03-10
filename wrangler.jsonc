@@ -1,0 +1,11 @@
+{
+  "name": "sikabahn-portfolio",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2024-05-02",
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "sikabahn-portfolio"
+    }
+  ]
+}
