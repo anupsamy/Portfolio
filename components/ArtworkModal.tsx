@@ -120,7 +120,9 @@ export default function ArtworkModal({ artworks, currentIndex, onClose, onNaviga
               width={artwork.width}
               height={artwork.height}
               className="max-w-full max-h-[95vh] w-auto h-auto object-contain pointer-events-none"
-              unoptimized
+              sizes="95vw"
+              quality={90}
+              priority
               draggable={false}
             />
           </div>
