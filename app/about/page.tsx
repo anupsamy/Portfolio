@@ -47,7 +47,7 @@ export default function AboutPage() {
               </p>
               
               <p className="text-lg leading-relaxed">
-                 I make art because it feels like a fun journey. For the sake of food and shelter though, I'm an engineering student.
+                 I make art to give my life some meaning. For the sake of food and shelter though, I'm an engineering student.
               </p>
               
               <p className="text-lg leading-relaxed">
