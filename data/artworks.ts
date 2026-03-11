@@ -67,12 +67,6 @@ export const artworkInputs: ArtworkInput[] = [
       height: 1600,
     },
     {
-      id: 'artwork-6',
-      image: '/images/2025-07-15.png',
-      width: 1200,
-      height: 1600,
-    },
-    {
       id: 'artwork-7',
       image: '/images/2024-07-26.png',
       width: 1200,
