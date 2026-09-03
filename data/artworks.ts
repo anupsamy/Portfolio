@@ -37,6 +37,42 @@ function processArtworks(inputs: ArtworkInput[]): Artwork[] {
 // Raw artwork data - add id, image, width, height, and optional description
 export const artworkInputs: ArtworkInput[] = [
     {
+      id: 'artwork-15',
+      image: '/images/2026-07-27.png',
+      width: 1200,
+      height: 1600,
+    },
+    {
+      id: 'artwork-16',
+      image: '/images/2026-07-25.png',
+      width: 1200,
+      height: 1600,
+    },
+    {
+      id: 'artwork-17',
+      image: '/images/2026-05-07.png',
+      width: 1200,
+      height: 1600,
+    },
+    {
+      id: 'artwork-18',
+      image: '/images/2026-05-05.png',
+      width: 1200,
+      height: 1600,
+    },
+    {
+      id: 'artwork-19',
+      image: '/images/2026-04-22.png',
+      width: 1200,
+      height: 1600,
+    },
+    {
+      id: 'artwork-20',
+      image: '/images/2026-03-25.png',
+      width: 1200,
+      height: 1600,
+    },
+    {
       id: 'artwork-1',
       image: '/images/2025-09-05.png',
       width: 1200,
